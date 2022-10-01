@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+   <!-- Adding the Fabric JS Library-->
+   <script src="https://cdnjs.cloudflare.com/ajax/libs/fabric.js/510/fabric.min.js"></script>
+</head>
+<body>
+   <h2>Cloning a Canvas in Fabric.js</h2>
+   <canvas id="canvas"></canvas>
+   <script>
+      // Initiate a canvas instance
+      var canvas = new fabric.Canvas("canvas");
+      var circle = new fabric.Circle({
+         left: 115,
+         top: 50,
+         radius: 50,
+         fill: "#85bb65",
+      });
+      canvas.add(circle);
+      canvas.setWidth(document.body.scrollWidth);
+      canvas.setHeight(250);
+      canvas.clone(function(clonedCanvas) {
+         // Convert our cloned Canvas Object to JSON
+         let canvasJSON = clonedCanvas.toJSON();
+         // Load the new cloned Canvas Object to canvas
+         canvas.loadFromJSON(canvasJSON);
+      });
+   </script>
+</body>
+</html>
