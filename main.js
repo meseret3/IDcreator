@@ -30,14 +30,14 @@ Adjust();
 const texts = new Map();
 let activeText = null;
 
-const textOne = new fabric.Textbox("PutTextHere", {
-  fill: "blue",
-  fontStyle: "bold",
-  // fontFamily: "Times New Roman",
-  fontFamily: "Arial",
+// const textOne = new fabric.Textbox("PutTextHere", {
+//   fill: "blue",
+//   fontStyle: "bold",
+//   // fontFamily: "Times New Roman",
+//   fontFamily: "Arial",
 
-  //fontFamily: 'montB'
-});
+//   //fontFamily: 'montB'
+// });
 
 function CreateText(e) {
   document.getElementById("create-text").addEventListener("click", (e) => {
@@ -99,6 +99,19 @@ function loadAndUse(font) {
   canvas.requestRenderAll();
 }
 
+function setColor(event) {
+  canvas.requestRenderAll();
+  canvas.getActiveObject().set("fill", event.target.value);
+}
+
+function pickColor() {
+  let colorWell = document.querySelector("#color-picker");
+  colorWell.addEventListener("input", setColor, false);
+  colorWell.addEventListener("change", setColor, false);
+  colorWell.select();
+}
+
+pickColor();
 // - track the current / selected text box
 // - get the get the selected font
 // - set the fontFamily of the current / selected text box
