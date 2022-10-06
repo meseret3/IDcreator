@@ -13,10 +13,19 @@ function Adjust() {
     context.fillStyle = "black";
     let x = document.getElementById("width").value;
     let y = document.getElementById("height").value;
-    let xp = x / 0.0264583333;
-    let yp = y / 0.0264583333;
+    //let xp = x / 0.0264583333;
+    //let yp = y *37.7952755906;//0.0264583333
+    var dpr     = window.devicePixelRatio;
+    var inch    = 25.4; //1inch = 25.4 mm
+    var ppi     = 157.351; 
+    cx= x*10;
+    cy= y*10;
+    xp=((cx/inch)*ppi)/dpr;
+    yp=((cy/inch)*ppi)/dpr;
 
-    canvas.setDimensions({ width: xp, height: yp });
+    canvas.setDimensions({ width: xp, height:yp});
+    canvas.backgroundColor="white";
+    canvas.renderAll;
     canvas.clone(function (clonedCanvas) {
       // Convert our cloned Canvas Object to JSON
       const canvasJSON = clonedCanvas.toJSON();
@@ -112,6 +121,101 @@ function pickColor() {
 }
 
 pickColor();
+
+
+function StaffId() {
+  document.getElementById("sid").addEventListener("click", (e) => {
+    e.preventDefault();
+
+    let can = document.getElementById("canvas1");
+    can.style.border = "solid black";
+    let context = can.getContext("2d");
+    context.fillStyle = "black";
+    
+    let xp = 15.4 / 0.0264583333;
+    let yp = 7.5 *37.7952755906;//0.0264583333
+
+    canvas.setDimensions({ width: xp, height:yp});
+    canvas.backgroundColor="white";
+    var image = document.getElementById('my-image');
+    var fabricImage = new fabric.Image(image);
+    canvas.add(fabricImage);
+    canvas.renderAll;
+    // canvas.clone(function (clonedCanvas) {
+    //   // Convert our cloned Canvas Object to JSON
+    //   const canvasJSON = clonedCanvas.toJSON();
+    //   // Load the new cloned Canvas Object to canvas
+    // });
+  });
+}
+StaffId()
+
+
+function VisitorId() {
+  document.getElementById("vid").addEventListener("click", (e) => {
+    e.preventDefault();
+
+    let can = document.getElementById("canvas1");
+    can.style.border = "solid black";
+    let context = can.getContext("2d");
+    context.fillStyle = "black";
+    
+    let xp = 12.0/ 0.0264583333;
+    let yp = 11.4 *37.7952755906;//0.0264583333
+
+    canvas.setDimensions({ width: xp, height:yp});
+    canvas.backgroundColor="white";
+    var image = document.getElementById('my-image');
+    var fabricImage = new fabric.Image(image);
+    canvas.add(fabricImage);
+    const text = new fabric.Textbox("Visitor", {
+      width:200,
+      left:160,
+      top:170,
+      fill: "#920000",
+      fontStyle: "bold",
+      fontFamily: "montB",
+    });
+    canvas.add(text)
+    const text2 = new fabric.Textbox("እንግዳ", {
+      width:200,
+      left:170,
+      top:230,
+      fill: "#00297A",
+      fontStyle: "bold",
+      fontFamily: "montB",
+    });
+    canvas.add(text2)
+    canvas.renderAll;
+    // canvas.clone(function (clonedCanvas) {
+    //   // Convert our cloned Canvas Object to JSON
+    //   const canvasJSON = clonedCanvas.toJSON();
+    //   // Load the new cloned Canvas Object to canvas
+    // });
+  });
+}
+VisitorId();
+
+function print(){
+  document.getElementById("printID").addEventListener("click", (e) => {
+    e.preventDefault();
+    var dataUrl = document.getElementById('canvas1').toDataURL(); //attempt to save base64 string to server using this var  
+    var windowContent = '<!DOCTYPE html>';
+    windowContent += '<html>'
+    windowContent += '<head><title>Print canvas</title></head>';
+    windowContent += '<body>'
+    windowContent += '<img src="' + dataUrl + '" onload=window.print();window.close();>';
+    windowContent += '</body>';
+    windowContent += '</html>';
+    var printWin = window.open('', '', 'width=640,height=560');
+    printWin.document.open();
+    printWin.document.write(windowContent);
+
+  
+  });
+  
+}
+print();
 // - track the current / selected text box
 // - get the get the selected font
 // - set the fontFamily of the current / selected text box
