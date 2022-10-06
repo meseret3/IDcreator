@@ -1,2 +1,2 @@
 # IDcreator
-Create Id drag and drop text 
+Create Id, photo, change font.
