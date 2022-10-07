@@ -13,24 +13,12 @@ function Adjust() {
     context.fillStyle = "black";
     let x = document.getElementById("width").value;
     let y = document.getElementById("height").value;
-    //let xp = x / 0.0264583333;
-    //let yp = y *37.7952755906;//0.0264583333
-    var dpr     = window.devicePixelRatio;
-    var inch    = 25.4; //1inch = 25.4 mm
-    var ppi     = 157.351; 
-    cx= x*10;
-    cy= y*10;
-    xp=((cx/inch)*ppi)/dpr;
-    yp=((cy/inch)*ppi)/dpr;
-
-    canvas.setDimensions({ width: xp, height:yp});
+    let xp = x * 44.705882352941176470588235294118;
+    let yp = y *44.705882352941176470588235294118;//0.0264583333
+    canvas.setDimensions({ width:xp, height:yp});
     canvas.backgroundColor="white";
     canvas.renderAll;
-    canvas.clone(function (clonedCanvas) {
-      // Convert our cloned Canvas Object to JSON
-      const canvasJSON = clonedCanvas.toJSON();
-      // Load the new cloned Canvas Object to canvas
-    });
+   
   });
 }
 
@@ -135,7 +123,7 @@ function StaffId() {
     let xp = 15.4 / 0.0264583333;
     let yp = 7.5 *37.7952755906;//0.0264583333
 
-    canvas.setDimensions({ width: xp, height:yp});
+    canvas.setDimensions({ width: 380, height:238});
     canvas.backgroundColor="white";
     var image = document.getElementById('my-image');
     var fabricImage = new fabric.Image(image);
@@ -160,17 +148,18 @@ function VisitorId() {
     let context = can.getContext("2d");
     context.fillStyle = "black";
     
-    let xp = 12.0/ 0.0264583333;
-    let yp = 11.4 *37.7952755906;//0.0264583333
+    // let xp = 12.0/ 0.0264583333;
+    // let yp = 11.4 *37.7952755906;//0.0264583333
 
-    canvas.setDimensions({ width: xp, height:yp});
+    canvas.setDimensions({ width: "238", height:"380"});
     canvas.backgroundColor="white";
     var image = document.getElementById('my-image');
-    var fabricImage = new fabric.Image(image);
+    var fabricImage = new fabric.Image(image,{
+    });
     canvas.add(fabricImage);
     const text = new fabric.Textbox("Visitor", {
       width:200,
-      left:160,
+      left:70,
       top:170,
       fill: "#920000",
       fontStyle: "bold",
@@ -179,7 +168,7 @@ function VisitorId() {
     canvas.add(text)
     const text2 = new fabric.Textbox("እንግዳ", {
       width:200,
-      left:170,
+      left:70,
       top:230,
       fill: "#00297A",
       fontStyle: "bold",
