@@ -9,19 +9,26 @@
       crossorigin="anonymous"
     />
     <link href="style.css" rel="stylesheet" type="text/css" />
-    <title>How to Create Text on Canvas using Fabric.js?</title>
+    <title>BAID</title>
 
     <!-- Loading the FabricJS library -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/fabric.js/3.6.2/fabric.min.js"></script>
   </head>
 
   <body>
-    <div class="container">
+    <div class="container main_c">
       <div class="row">
-        <div class="col-8">
-          <canvas id="canvas1"> </canvas>
+        <div class="col-9 h1">
+          <canvas id="canvas1" class="c1"> </canvas>
+          <img style="display: none;" src=
+          "logo3.jpg"
+                          id="my-image" alt="" >
+          <!-- Camera Script-->
+          
+            <!--Script Ends here-->
         </div>
-        <div class="col-4">
+        
+        <div class="col-3">
           <div class="form-hand">
             <form class="form-control" id="form">
               <div class="row">
@@ -29,25 +36,29 @@
                 <div class="col-6">
                   <div class="mb-3">
                     <label class="form-label" for="height">Height:</label>
-                    <input class="form-control" type="number" id="height" name="height" />
+                    <input class="form-control" type="number" id="height" name="height" step="any" />
                   </div>
                   <!-- <br/>class='text-area' -->
 
                   <!--<br>-->
+                  
                 </div>
                 <div class="col-6">
                   <div class="mb-3">
                     <label class="form-label" for="width">Width:</label>
 
-                    <input class="form-control" type="number" id="width" name="width" class="input-boxw" />
+                    <input class="form-control" type="number" id="width" name="width" class="input-boxw" step="any" />
                   </div>
                   <!--<br>-->
                 </div>
                 <!-- <br> -->
               </div>
-              <button class="btn btn-primary button buttonField" type="submit" id="adjust" >Create Card</button>
+              
+              <button class="btn btn-primary button buttonField" type="submit" id="adjust" >Custom Card</button>
+              <button class="btn btn-primary button buttonField" type="button" id="sid" >Staff ID</button>
+              <button class="btn btn-primary button buttonField" type="button" id="vid" >Visitors ID</button>
               <button class="btn btn-primary button buttonField" type="button" id="create-text">Add Text</button>
-              <input type="color" id="color-picker" name="color-picker" value="#e66465" />
+              
               <!-- <label for="head">Head</label> -->
               <input class="form-control" type="file" id="file" />
               <label for="fontf">Choose a font:</label>
@@ -59,6 +70,9 @@
                 <!-- <option value="SS"></option>
 		<option value="AR"></option> --></select
               ><br />
+              <label for="color">Font Color</label>
+              <input type="color" id="color-picker" name="color-picker" value="#e66465" /><br>
+              <button class="btn btn-primary button buttonField" type="button" id="printID">Print Card</button>
             </form>
           </div>
         </div>

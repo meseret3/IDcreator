@@ -21,9 +21,23 @@
     width:40px;
     height:30px;
 }
-.col-8{
-    background-color: aqua;
+.col-9{
+    background-color:#343a40;
 }
 .btn{
     margin: 15px 0;
+}
+
+.main_c{
+   padding-top: 20px;
+}
+.c1{
+    margin-top:60px;
+    margin-left: 90px;
+}
+.h1{
+    height: 500px;
+}
+#canvas1{
+    border-radius: 20px;
 }
