@@ -27,15 +27,6 @@ Adjust();
 const texts = new Map();
 let activeText = null;
 
-// const textOne = new fabric.Textbox("PutTextHere", {
-//   fill: "blue",
-//   fontStyle: "bold",
-//   // fontFamily: "Times New Roman",
-//   fontFamily: "Arial",
-
-//   //fontFamily: 'montB'
-// });
-
 function CreateText(e) {
   document.getElementById("create-text").addEventListener("click", (e) => {
     try {
