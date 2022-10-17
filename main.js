@@ -198,5 +198,3 @@ function print(){
 print();
 // - track the current / selected text box
 // - get the get the selected font
-// - set the fontFamily of the current / selected text box
-
