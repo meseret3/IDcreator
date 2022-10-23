@@ -197,4 +197,3 @@ function print(){
 }
 print();
 // - track the current / selected text box
-// - get the get the selected font
