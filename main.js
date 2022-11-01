@@ -18,7 +18,6 @@ function Adjust() {
     canvas.setDimensions({ width:xp, height:yp});
     canvas.backgroundColor="white";
     canvas.renderAll;
-   
   });
 }
 
