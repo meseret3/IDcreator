@@ -55,7 +55,6 @@ function Adjust() {
     canvas.setDimensions({ width:xp, height:yp});
     canvas.backgroundColor="white";
     canvas.renderAll;
-   
   });
 }
 
@@ -63,15 +62,6 @@ Adjust();
 
 const texts = new Map();
 let activeText = null;
-
-// const textOne = new fabric.Textbox("PutTextHere", {
-//   fill: "blue",
-//   fontStyle: "bold",
-//   // fontFamily: "Times New Roman",
-//   fontFamily: "Arial",
-
-//   //fontFamily: 'montB'
-// });
 
 function CreateText(e) {
   document.getElementById("create-text").addEventListener("click", (e) => {
@@ -307,6 +297,7 @@ function print(){
   
 }
 print();
+<<<<<<< HEAD
 
 function Delete() {
   document.getElementById("del").addEventListener("click" ,(e) => {
@@ -401,3 +392,5 @@ Ser();
 //     crop = true;
 //     canvas.bringToFront(el);
 // });
+=======
+>>>>>>> f730224b3de397d4d75b40fa7a567a58ce2a1487

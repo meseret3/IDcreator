@@ -4,7 +4,6 @@ include_once 'include/config.php';
 <!DOCTYPE html>
 <html>
   <head>
-    <!-- CSS only -->
     <link
       href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css"
       rel="stylesheet"
@@ -52,11 +51,6 @@ include_once 'include/config.php';
           <img style="display: none;" src=
           "smlogo.png"
                           id="my-image" alt="" >
-
-        <!-- Image for Visitor  -->
-        <img style="display: none;" 
-              src="smallogo.png" 
-                   id="my-image1" alt="">
           <!-- Camera Script-->
           
             <!--Script Ends here-->
@@ -74,8 +68,6 @@ include_once 'include/config.php';
                   </div>
                   <!-- <br/>class='text-area' -->
 
-                  <!--<br>-->
-                  
                 </div>
                 <div class="col-6">
                   <div class="mb-3">
@@ -99,7 +91,11 @@ include_once 'include/config.php';
               <label for="fontf">Choose a font:</label>
 
               <select class="form-select" name="fontf" id="fontf">
-                </select
+                <!-- <option value="MB"></option> -->
+                <!-- <option value="MN"></option> -->
+                <!-- <option value="TN"></option> -->
+                <!-- <option value="SS"></option>
+		<option value="AR"></option> --></select
               ><br />
               <label for="color">Font Color</label>
               <input type="color" id="color-picker" name="color-picker" value="#e66465" /><br>
@@ -110,7 +106,6 @@ include_once 'include/config.php';
             </form>
           </div>
         </div>
-
         <script type="module" src="main.js"></script>
       </div>
     </div>
