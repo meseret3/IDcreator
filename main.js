@@ -3,18 +3,55 @@ import allFonts from "./fonts.js";
 let canvas = new fabric.Canvas("canvas1");
 
 // Create a new instance of Canvas
+
+var dpr = window.devicePixelRatio;
+var inch = 25.4;
+
+var pixelHeight = screen.height * dpr;
+var pixelWidth = screen.width * dpr;
+
+
+
+
 function Adjust() {
   document.getElementById("form").addEventListener("submit", (e) => {
     e.preventDefault();
 
+    var dpi_x = document.getElementById('dpi').offsetWidth;
+    var dpi_y = document.getElementById('dpi').offsetHeight;
+
+    var width = screen.width / dpi_x;
+    var height = screen.height / dpi_y;
+
+    var py = (width*width) + (height* height);
+    var npy = Math.sqrt(py);
+    
+    var winW = screen.width;
+    var winH = screen.height;
+
+    var pyth = (winW*winW)+(winH*winH); 
+    var npyth = Math.sqrt(pyth);
+
+    var diag =Math.round(npyth/npy) ;
+
+ 
+    function calculatePpi(monitorDiagonal) {
+      return (Math.sqrt(Math.pow(pixelWidth, 2) + Math.pow(pixelHeight, 2))) / monitorDiagonal;
+     }  
+    function mmToPx(mm) {
+      return  (((mm / inch) *diag));//calculatePpi(diag)
+
+    }
     let can = document.getElementById("canvas1");
     can.style.border = "solid black";
     let context = can.getContext("2d");
     context.fillStyle = "black";
     let x = document.getElementById("width").value;
     let y = document.getElementById("height").value;
-    let xp = x * 44.705882352941176470588235294118;
-    let yp = y *44.705882352941176470588235294118;//0.0264583333
+    var xmm = x*10;
+    var ymm = y*10;
+    let xp =  mmToPx(xmm);//44.705882352941176470588235294118,x * 38.8;
+    let yp = mmToPx(ymm);//0.0264583333
     canvas.setDimensions({ width:xp, height:yp});
     canvas.backgroundColor="white";
     canvas.renderAll;
@@ -64,11 +101,15 @@ CreateText();
 
 document.getElementById("file").addEventListener("change", function (e) {
   const file = e.target.files[0];
+  
   const reader = new FileReader();
+  console.log(reader);
   reader.onload = function (f) {
     const data = f.target.result;
+    
     fabric.Image.fromURL(data, function (img) {
       const oImg = img.set({ left: 40, top: 0, angle: 0, width: 520, height: 600 }).scale(0.4);
+      
       canvas.add(oImg).renderAll();
       const a = canvas.setActiveObject(oImg);
       const dataURL = canvas.toDataURL({ format: "png", quality: 0.8 });
@@ -119,14 +160,46 @@ function StaffId() {
     can.style.border = "solid black";
     let context = can.getContext("2d");
     context.fillStyle = "black";
-    
-    let xp = 15.4 / 0.0264583333;
-    let yp = 7.5 *37.7952755906;//0.0264583333
+    //var rh = (screen.height/10);
+    //var sd = (screen.height*screen.height)+(screen.width*screen.width)
+    //var nsd = Math.sqrt(sd);
+    var dpi_x = document.getElementById('dpi').offsetWidth;
+    var dpi_y = document.getElementById('dpi').offsetHeight;
 
-    canvas.setDimensions({ width: 380, height:238});
+    var width = screen.width / dpi_x;
+    var height = screen.height / dpi_y;
+
+    var py = (width*width) + (height* height);
+    var npy = Math.sqrt(py);
+    
+    var winW = screen.width;
+    var winH = screen.height;
+
+    var pyth = (winW*winW)+(winH*winH); 
+    var npyth = Math.sqrt(pyth);
+
+    var diag =Math.round(npyth/npy) ;
+
+    //var diag = 0; //Math.round(Math.sqrt(pyth)/nsd)/10; 
+    var dpr = window.devicePixelRatio;
+    var inch = 25.4;
+    var pixelHeight = screen.height * dpr;
+    var pixelWidth = screen.width * dpr;
+    function calculatePpi(monitorDiagonal) {
+      return (Math.sqrt(Math.pow(pixelWidth, 2) + Math.pow(pixelHeight, 2))) / monitorDiagonal;
+     }  
+    function mmToPx(mm) {
+      return  (((mm / inch) * (diag + 0.5)));//
+
+    }
+    
+    let xp = mmToPx(86);
+    let yp = mmToPx(54);//0.0264583333
+
+    canvas.setDimensions({ width: xp, height:yp ,excludeFromExport:true});//w=380 ,h=238
     canvas.backgroundColor="white";
     var image = document.getElementById('my-image');
-    var fabricImage = new fabric.Image(image);
+    var fabricImage = new fabric.Image(image,{excludeFromExport:true});
     canvas.add(fabricImage);
     canvas.renderAll;
     // canvas.clone(function (clonedCanvas) {
@@ -143,33 +216,62 @@ function VisitorId() {
   document.getElementById("vid").addEventListener("click", (e) => {
     e.preventDefault();
 
+    var dpi_x = document.getElementById('dpi').offsetWidth;
+    var dpi_y = document.getElementById('dpi').offsetHeight;
+
+    var width = screen.width / dpi_x;
+    var height = screen.height / dpi_y;
+
+    var py = (width*width) + (height* height);
+    var npy = Math.sqrt(py);
+    
+    var winW = screen.width;
+    var winH = screen.height;
+
+    var pyth = (winW*winW)+(winH*winH); 
+    var npyth = Math.sqrt(pyth);
+
+    var diag =Math.round(npyth/npy) ;
+
+
+    var inch = 25.4;
+    var pixelHeight = screen.height * dpr;
+    var pixelWidth = screen.width * dpr;
+    function calculatePpi(monitorDiagonal) {
+      return (Math.sqrt(Math.pow(pixelWidth, 2) + Math.pow(pixelHeight, 2))) / monitorDiagonal;
+     }  
+    function mmToPx(mm) {
+      return  (((mm / inch) * diag));
+
+    
+    }
     let can = document.getElementById("canvas1");
     can.style.border = "solid black";
     let context = can.getContext("2d");
     context.fillStyle = "black";
     
-    // let xp = 12.0/ 0.0264583333;
-    // let yp = 11.4 *37.7952755906;//0.0264583333
+    let xp = mmToPx(54);
+    let yp = mmToPx(86);//0.0264583333
 
-    canvas.setDimensions({ width: "238", height:"380"});
+    canvas.setDimensions({ width: xp, height:yp});
     canvas.backgroundColor="white";
-    var image = document.getElementById('my-image');
+    var image = document.getElementById('my-image1');
     var fabricImage = new fabric.Image(image,{
     });
     canvas.add(fabricImage);
     const text = new fabric.Textbox("Visitor", {
-      width:200,
-      left:70,
-      top:170,
+      width:170,
+      left:40,
+      top:120,
       fill: "#920000",
       fontStyle: "bold",
       fontFamily: "montB",
     });
     canvas.add(text)
     const text2 = new fabric.Textbox("እንግዳ", {
-      width:200,
-      left:70,
-      top:230,
+      width:170,
+      left:50,
+      top:180,
       fill: "#00297A",
       fontStyle: "bold",
       fontFamily: "montB",
@@ -205,7 +307,97 @@ function print(){
   
 }
 print();
+
+function Delete() {
+  document.getElementById("del").addEventListener("click" ,(e) => {
+    e.preventDefault();
+  var active = canvas.getActiveObject()
+  if (active) {
+    canvas.remove(active)
+    if (active.type == "activeSelection") {
+      active.getObjects().forEach(x => canvas.remove(x))
+      canvas.discardActiveObject().renderAll()
+    }
+  }
+});
+}
+Delete();
+
+function Ser(){
+  document.getElementById("save").addEventListener("click",(e) =>{
+    e.preventDefault();
+    var ob = JSON.stringify(canvas);
+    var newa = JSON.parse(ob); 
+   //console.log(ob["objects"]);
+   console.log(newa.objects[0]);
+
+  });
+}
+Ser();
+
+
+// window.deleteObject = function() {
+//   document.getElementById("del").addEventListener("click", (e) => {
+//     e.preventDefault();
+//     canvas.getActiveObject().remove();
+//   });
+ 
+// }
+// window.deleteObject();
 // - track the current / selected text box
 // - get the get the selected font
 // - set the fontFamily of the current / selected text box
 // - re-render
+//////////////////////////////////////Croping//////////////////////////////
+// var pos = [0, 0];
+
+// var r = document.getElementById('canvas1').getBoundingClientRect();
+// pos[0] = r.left;
+// pos[1] = r.top;
+
+// var mousex = 0;
+// var mousey = 0;
+// var crop = false;
+// var disabled = false;
+
+// //console.log(pos);
+
+// var el = new fabric.Rect({
+//     //left: 100,
+//     //top: 100,
+//     fill: 'transparent',
+//     originX: 'left',
+//     originY: 'top',
+//     stroke: '#ccc',
+//     strokeDashArray: [2, 2],
+//     opacity: 1,
+//     width: 1,
+//     height: 1
+// });
+// el.visible = false;
+// canvas.add(el);
+// var object;
+// fabric.util.loadImage(src, function (img) {
+//     object = new fabric.Image(img);
+//     object.set({
+//         left: 100,
+//         top: 100,
+//         selectable: false
+//     });
+//     object.hasRotatingPoint = true;
+//     object.scaleX = object.scaleY = 0.25;
+//     canvas.add(object);
+//     canvas.renderAll();
+// });
+
+// canvas.on("mouse:down", function (event) {
+//     if (disabled) return;
+//     el.left = event.e.pageX - pos[0];
+//     el.top = event.e.pageY - pos[1];
+//     //el.selectable = false;
+//     el.visible = true;
+//     mousex = event.e.pageX;
+//     mousey = event.e.pageY;
+//     crop = true;
+//     canvas.bringToFront(el);
+// });

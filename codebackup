@@ -1,0 +1,9 @@
+<header>
+      <!-- <img class="logo" src="logo2nobg.png" alt="logo" width="150" height="120"> -->
+      <nav>
+        <ul class="nav_links">
+          <li><a href="index.html">Home</li>
+          <li><a href="index.html">Printed Cards</li>
+        </ul>
+      </nav>
+    </header>
