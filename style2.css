@@ -10,7 +10,6 @@ html,
 body {
 	height: 100%;
 }
-
 body {
 	font-size: 110%;
 	color: #ecf0f1;
@@ -22,7 +21,6 @@ body {
 	left: 0;
 	overflow: hidden;
 }
-
 .main {
 	position: absolute;
 	height: 100%;
