@@ -36,7 +36,6 @@ include_once 'include/config.php';
         </ul>  
       </div>
     </nav>
-  
 
 
     <div class="container main_c">
