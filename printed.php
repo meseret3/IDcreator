@@ -30,7 +30,6 @@
           </ul>  
         </div>
       </nav>
-
 <div class="overlay"></div>
 <div class="stars" aria-hidden="true"></div>
 <div class="starts2" aria-hidden="true"></div>
