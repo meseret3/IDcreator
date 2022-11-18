@@ -287,9 +287,7 @@ function print(){
     windowContent += '</html>';
     var printWin = window.open('', '', 'width=640,height=560');
     printWin.document.open();
-    printWin.document.write(windowContent);
-
-  
+    printWin.document.write(windowContent); 
   });
   
 }
