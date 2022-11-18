@@ -37,7 +37,6 @@ include_once 'include/config.php';
       </div>
     </nav>
 
-
     <div class="container main_c">
       <div class="row">
         <div class="col-9 h1">
