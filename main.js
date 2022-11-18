@@ -10,9 +10,6 @@ var inch = 25.4;
 var pixelHeight = screen.height * dpr;
 var pixelWidth = screen.width * dpr;
 
-
-
-
 function Adjust() {
   document.getElementById("form").addEventListener("submit", (e) => {
     e.preventDefault();
