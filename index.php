@@ -12,7 +12,6 @@ include_once 'include/config.php';
     />
     <link href="style.css" rel="stylesheet" type="text/css" />
     <title>BAID</title>
-
     <!-- Loading the FabricJS library -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/fabric.js/3.6.2/fabric.min.js"></script>
   </head>
