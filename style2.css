@@ -6,10 +6,12 @@ url('https://fonts.googleapis.com/css?family=Poiret+One|Source+Sans+Pro');
 	margin: 0;	
 	box-sizing: border-box;
 }
+
 html,
 body {
 	height: 100%;
 }
+
 body {
 	font-size: 110%;
 	color: #ecf0f1;
