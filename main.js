@@ -385,7 +385,7 @@ Ser();
 //     mousex = event.e.pageX;
 //     mousey = event.e.pageY;
 //     crop = true;
-//     canvas.bringToFront(el)
+//     canvas.bringToFront(el);
 // });
 =======
 >>>>>>> f730224b3de397d4d75b40fa7a567a58ce2a1487
