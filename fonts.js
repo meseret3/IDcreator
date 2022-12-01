@@ -64,6 +64,4 @@ const allFonts = [
 ];
 
 
-
-
 export default allFonts
