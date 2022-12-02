@@ -63,5 +63,4 @@ const allFonts = [
   "Yu Gothic",
 ];
 
-
 export default allFonts
