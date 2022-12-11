@@ -60,7 +60,7 @@ const allFonts = [
   "Verdana",
   "Webdings",
   "Wingdings",
-  "Yu Gothic",
+ 
 ];
 
 export default allFonts
