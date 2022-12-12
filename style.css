@@ -2,6 +2,7 @@
     src:url('font/Montserrat-Bold.ttf');
     font-family: montB;
 }
+
 .main_container{
     background-color:azure;
     height: 500px;
@@ -9,6 +10,7 @@
     height: 90%;
     float: right;
 }
+
 .form-hand{
     float:right;
 }
