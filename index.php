@@ -43,6 +43,7 @@ include_once 'include/config.php';
           <img style="display: none;" src=
           "smlogo.png"
                           id="my-image" alt="" >
+		
           <!-- Camera Script-->
           
             <!--Script Ends here-->
