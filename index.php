@@ -95,7 +95,6 @@ include_once 'include/config.php';
               <button class="btn btn-primary button buttonField" type="button" id="printID">Print Card</button>
               <button class="btn btn-primary button buttonField" type="button" id="del" >Delete</button><br>
               <button class="btn btn-primary button buttonField" type="button" id="save">Save</button>
-
             </form>
           </div>
         </div>
