@@ -84,7 +84,7 @@ include_once 'include/config.php';
               <label for="fontf">Choose a font:</label>
 
               <select class="form-select" name="fontf" id="fontf">
-                <!-- <option value="MB"></option> -->
+                <option value="MB"></option>
                 <!-- <option value="MN"></option> -->
                 <!-- <option value="TN"></option> -->
                 <!-- <option value="SS"></option>
