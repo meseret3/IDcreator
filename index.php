@@ -101,6 +101,5 @@ include_once 'include/config.php';
         <script type="module" src="main.js"></script>
       </div>
     </div>
- 
   </body>
 </html>
