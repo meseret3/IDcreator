@@ -59,7 +59,6 @@ const allFonts = [
   "Trebuchet MS",
   "Verdana",
   "Webdings",
-  "Wingdings",
   "Yu Gothic",
 ];
 
