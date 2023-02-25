@@ -86,7 +86,6 @@ include_once 'include/config.php';
               <select class="form-select" name="fontf" id="fontf">
                 <option value="MB"></option>
                 <!-- <option value="MN"></option> -->
-                <!-- <option value="TN"></option> -->
                 <!-- <option value="SS"></option>
 		<option value="AR"></option> --></select
               ><br />
