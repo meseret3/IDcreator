@@ -86,9 +86,7 @@ include_once 'include/config.php';
               <select class="form-select" name="fontf" id="fontf">
                 <option value="MB"></option>
                 
-                <!-- <option value="SS"></option>
-		<option value="AR"></option> --></select
-              ><br />
+                
               <label for="color">Font Color</label>
               <input type="color" id="color-picker" name="color-picker" value="#e66465" /><br>
               <button class="btn btn-primary button buttonField" type="button" id="printID">Print Card</button>
